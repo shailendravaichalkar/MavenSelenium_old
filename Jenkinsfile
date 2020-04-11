@@ -23,7 +23,7 @@ pipeline {
       }
 	  stage('Notification') {
 	    steps {
-			emailext ()
+			emailext (to: 'vaichalkar.shailendra@gmail.com')
 	    }
 	  }
 	}
