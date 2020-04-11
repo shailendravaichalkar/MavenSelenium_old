@@ -19,12 +19,11 @@ pipeline {
 	        archiveArtifacts 'target/*.jar'
 	    }
       }
-	}
-	post {
-	  always {
-		emailext body: '''This is automated mail from Jenkins. 
-		$DEFAULT_CONTENT
-		''', subject: 'JENKINS: (${JOB_NAME}) (${BUILD_NUMBER}) : $DEFAULT_SUBJECT', to: 'vaichalkar.shailendra@gmail.com'
-		}
+	  stage('Notification') {
+	  steps {
+	        emailext body: 'This is automated mail from Jenkins. $DEFAULT_CONTENT', 
+			subject: 'JENKINS: (${JOB_NAME}) (${BUILD_NUMBER}) : $DEFAULT_SUBJECT', 
+			to: 'vaichalkar.shailendra@gmail.com'
+	    }
 	}
 }
