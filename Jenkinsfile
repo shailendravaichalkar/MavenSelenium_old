@@ -26,6 +26,3 @@ pipeline {
       }
     }
 }
-
-
-//test ee cdc dcwwdc 
