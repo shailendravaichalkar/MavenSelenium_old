@@ -11,20 +11,23 @@ pipeline {
       }
       stage('Test and Install') {           
         steps {
-		    bat "echo HI"
-			//bat "mvn install -Dbrowser=chrome -Dheadless=false"
+			bat "mvn install -Dbrowser=chrome -Dheadless=false"
         }
       } 
 	  stage('Deploy') {
 	    steps {
-		    bat "echo HI"
-	        //archiveArtifacts 'target/*.jar'
+	        archiveArtifacts 'target/*.jar'
 	    }
       }
-	  stage('Notification') {
+	  stage ('Notification') {
 	    steps {
-			emailext (to: 'vaichalkar.shailendra@gmail.com')
-	    }
+			post {
+			  always {
+				emailext body: '''This is automated mail from Jenkins. 
+				$DEFAULT_CONTENT
+				''', subject: 'JENKINS: (${JOB_NAME}) (${BUILD_NUMBER}) : $DEFAULT_SUBJECT', to: 'vaichalkar.shailendra@gmail.com'}
+			}
+		}
 	  }
 	}
 }
