@@ -23,10 +23,10 @@ pipeline {
       }
 	  stage('Notification') {
 	    steps {
-			emailext body: '''This is automated mail from Jenkins. 
-			$DEFAULT_CONTENT
-			''', subject: 'JENKINS: (${JOB_NAME}) (${BUILD_NUMBER}) : $DEFAULT_SUBJECT', to: 'vaichalkar.shailendra@gmail.com'
+			emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
 	    }
 	  }
 	}
 }
+
+
