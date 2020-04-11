@@ -11,13 +11,13 @@ pipeline {
       }
       stage('Test and Install') {           
         steps {
-		    bat "echi HI"
+		    bat "echo HI"
 			//bat "mvn install -Dbrowser=chrome -Dheadless=false"
         }
       } 
 	  stage('Deploy') {
 	    steps {
-		    bat "echi HI"
+		    bat "echo HI"
 	        //archiveArtifacts 'target/*.jar'
 	    }
       }
