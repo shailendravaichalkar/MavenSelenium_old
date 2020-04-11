@@ -24,7 +24,7 @@ pipeline {
 	  stage('Notification') {
 	    steps {
 			emailext (
-				subject: "Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
+				subject: "Job is '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
 				body: """<p>Check console output at <a href="${env.BUILD_URL}">${env.JOB_NAME}</a></p>""",
 				to: "vaichalkar.shailendra@gmail.com",
 				from: "vaichalkar.shailendra@gmail.com"
