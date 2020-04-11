@@ -11,12 +11,12 @@ pipeline {
       }
       stage('Test and Install') {           
         steps {
-			bat "mvn install -Dbrowser=chrome -Dheadless=false"
+			//bat "mvn install -Dbrowser=chrome -Dheadless=false"
         }
       } 
 	  stage('Deploy') {
 	    steps {
-	        archiveArtifacts 'target/*.jar'
+	        //archiveArtifacts 'target/*.jar'
 	    }
       }
 	  stage('Notification') {
