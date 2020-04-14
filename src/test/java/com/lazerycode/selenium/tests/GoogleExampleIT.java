@@ -30,7 +30,7 @@ public class GoogleExampleIT extends DriverBase {
         // Check the title of the page
         System.out.println("Page title is: " + driver.getTitle());
 
-        googleHomePage.enterSearchTerm("Cheese")
+        googleHomePage.enterSearchTerm("SMART Photography Pune")
                 .submitSearch();
 
         // Google's search is rendered dynamically with JavaScript.
@@ -59,7 +59,7 @@ public class GoogleExampleIT extends DriverBase {
         // Check the title of the page
         System.out.println("Page title is: " + driver.getTitle());
 
-        googleHomePage.enterSearchTerm("Milk")
+        googleHomePage.enterSearchTerm("Fiserv Pune")
                 .submitSearch();
 
         // Google's search is rendered dynamically with JavaScript.
